@@ -1,0 +1,70 @@
+  #dataset:
+    exp_name: cryogan_trial
+    simulated: True
+    algotype: train
+    device: "cuda:0"
+    datasetsize: 41123
+    snr_val: 10
+    lambdapenalty: 0.001
+    init_with_gt: False
+    loss_mode: "matrix"
+    unet: False
+    protein: betagal
+    train_num_workers: 32
+    normalize_gt: False
+    shift: False
+    ctf: False
+    
+  #scheduler
+    scheduler_step_size: 1000
+    scheduler_gamma: 0.98
+
+  #projector
+    side_len: 32
+    ProjectionSize: 32
+    map_shape: 32
+    batch_size: 32
+    noise: True
+    weight_gen: 1
+    positivity: True
+
+  #optimization_gen:
+    gen_lr: 0.001
+    gen_momentum: 0.5
+    gen_beta_1: 0.5
+    gen_beta_2: 0.9
+    gen_eps: 1e-8
+    gen_clip_grad: True
+    gen_clip_norm_value: 100
+    gen_weight_decay: 0
+
+  #optimization_dis:
+    dis_iterations: 4
+    dis_optimizer: 'adam'
+    dis_lr: 1e-3
+    dis_beta_1: 0.5
+    dis_beta_2: 0.9
+    dis_eps: 1e-8
+    dis_clip_grad: True
+    dis_clip_norm_value: 1e8
+    dis_weight_decay: 0
+
+  #optimization_scalar:
+    scalar_optimizer: 'adam'
+    scalar_lr: 1e-3
+    scalar_beta_1: 0.5
+    scalar_beta_2: 0.99
+    scalar_eps: 1e-8
+    scalar_weight_decay: 0
+    scalar_clip_grad: True
+    scalar_clip_norm_value: 1e1
+
+
+  #dis_architecture:
+    num_channel_Discriminator: 16
+    num_layer_Discriminator: 4 #int(np.log2(sidelen)-2) in the update_config
+    num_N_Discriminator: 10
+    FourierDiscriminator: False
+    leak_value: 0.1
+    normalize_dis_input: True
+

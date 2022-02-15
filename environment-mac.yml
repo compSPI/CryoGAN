@@ -1,0 +1,28 @@
+name: cryogan-mac
+channels:
+  - conda-forge
+  - defaults
+  - pytorch
+dependencies:
+  - codecov
+  - configparser
+  - coverage
+  - h5py
+  - mdtraj
+  - mrcfile
+  - numba
+  - numpy
+  - pip
+  - pyfftw
+  - pytest
+  - pytest-cov
+  - pytorch=1.9.0
+  - pip:
+    - geomstats
+    - git+https://github.com/compSPI/compSPI.git
+    - git+https://github.com/compSPI/ioSPI.git
+    - git+https://github.com/compSPI/simSPI.git
+    - pytorch3d
+    - raster_geometry
+    - starfile
+  - torchvision
